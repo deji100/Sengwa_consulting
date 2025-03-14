@@ -7,6 +7,10 @@ import { useState } from "react";
 const NavBar = () => {
     const [toggle, setToggle] = useState(false);
 
+    const handleClick = () => {
+        setToggle(false);
+    }
+
     return (
         <nav>
             <div className="nav-inner">
@@ -35,13 +39,13 @@ const NavBar = () => {
                 <RiMenuFold3Fill className={toggle ? "nav-menu-burger active" : "nav-menu-burger"} onClick={() => setToggle(!toggle)} />
 
                 <ul className={toggle ? "mobile-nav-links active" : "mobile-nav-links"}>
-                    <li>
+                    <li onClick={handleClick}>
                         <Link href={"/about-us"}>About Us</Link>
                     </li>
-                    <li>
+                    <li onClick={handleClick}>
                         <Link href={"/contact-us"}>Contact Us</Link>
                     </li>
-                    <li>
+                    <li onClick={handleClick}>
                         <Link href={"/faq"}>FAQ</Link>
                     </li>
                 </ul>
