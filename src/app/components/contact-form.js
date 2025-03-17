@@ -60,8 +60,8 @@ const ContactForm = () => {
                 setSubmit(false)
 
                 setTimeout(() => {
-                    router.push("https://www.paypal.com/ncp/payment/65RGFAAN2CPYY", "_blank"); // Redirect to success page
-                }, 2000);
+                    router.push("/");
+                }, 3000);
 
             } else {
                 setSubmit(false)

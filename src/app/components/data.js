@@ -100,12 +100,12 @@ export const testimonials = [
 export const faqData = [
     {
         id: 1,
-        question: "What services does Sengwa Consultancy offer?",
-        answer: "Sengwa Consultancy specializes in job hunting support. Our services include personalized job applications, job board profile setup, dedicated job search email creation, weekly status reports, and interview preparation. We handle the job search process so you can focus on landing the right role."
+        question: "What services does Sengwa Consulting offer?",
+        answer: "Sengwa Consulting specializes in job hunting support. Our services include personalized job applications, job board profile setup, dedicated job search email creation, weekly status reports, and interview preparation. We handle the job search process so you can focus on landing the right role."
     },
     {
         id: 2,
-        question: "How does Sengwa Consultancy apply for jobs on my behalf?",
+        question: "How does Sengwa Consulting apply for jobs on my behalf?",
         answer: "Once we gather your job preferences — including desired roles, industries, and locations — our team searches for suitable job openings daily. We submit applications using a dedicated job search email and keep track of all submissions, providing you with a weekly report for full transparency.",
     },
     {
@@ -120,7 +120,7 @@ export const faqData = [
     },
     {
         id: 5,
-        question: "Is Sengwa Consultancy only for certain industries or job levels?",
+        question: "Is Sengwa Consulting only for certain industries or job levels?",
         answer: "No, we support job seekers across various industries and career levels — from entry-level positions to executive roles. Whether you're a recent graduate or a seasoned professional, we tailor our job hunting strategies to suit your unique career path."
     }
 ]

@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-brand">
           <h2>Sengwa</h2>
-          <h2>Consultancy</h2>
+          <h2>Consulting</h2>
           <br />
           <br />
           <div className="social-icons">
@@ -26,9 +26,9 @@ const Footer = () => {
           </div>
           <div className="footer-column">
             <h3>Contact</h3>
-            <p>Admin@SengwaMina.com</p>
-            <p>+12245349898</p>
-            <p>+2348142274652</p>
+            <p>Hr@SengwaMina.com</p>
+            <p>{"+1 224-534-9898"}</p>
+            <p>{"+234 814-227-4652"}</p>
             <p>Chicago, IL</p>
           </div>
         </div>

@@ -10,7 +10,7 @@ const Hero = () => {
                     <h1>Your Partner in Job Hunting Success</h1>
                     <p>We connect job seekers with the right opportunities. Let us guide your job search with expert support and resources.</p>
                     <button>
-                        <Link href={"https://www.paypal.com/ncp/payment/65RGFAAN2CPYY"} target="_blank">Get Started</Link>
+                        <Link href={"https://forms.gle/8VYWfGBSdcSfbned8"} target="_blank">Get Started</Link>
                     </button>
                 </div>
 

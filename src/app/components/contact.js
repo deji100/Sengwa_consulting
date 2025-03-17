@@ -1,6 +1,7 @@
 import Image from "next/image";
 import ContactImg from "/public/contact.webp"
 import ContactForm from "./contact-form";
+import { m } from "framer-motion";
 
 const Contact = () => {
     return (
@@ -16,16 +17,19 @@ const Contact = () => {
                     </p>
                     <ul className="contact-details">
                         <li>
-                            <span className="emoji">📞</span>Phone: <span className="contact-highlight"> {" "} +12245349898</span>
+                            <span className="emoji">📞</span>Phone: <span className="contact-highlight" style={{ margin: "0 10px" }}>{"+1 224-534-9898"}</span>
                         </li>
                         <li>
-                            <span className="emoji">📞</span>Phone: <span className="contact-highlight"> {" "} +2348142274652</span>
+                            <span className="emoji">📞</span>Phone: <span className="contact-highlight" style={{ margin: "0 10px" }}>{"+234 814-227-4652"}</span>
                         </li>
                         <li>
-                            <span className="emoji">📧</span>Email: <span className="contact-highlight"> {" "} Admin@SengwaMina.com</span>
+                            <span className="emoji">📧</span>
+                            {" Email: "}
+                            <span className="contact-highlight" style={{ margin: "0 10px" }}>
+                                {"  Hr@SengwaMina.com"}</span>
                         </li>
                         <li>
-                            <span className="emoji">📍</span>Address: <span className="contact-highlight"> {" "} Chicago, IL</span>
+                            <span className="emoji">📍</span>Address: <span className="contact-highlight" style={{margin: "0 10px"}}>Chicago, IL</span>
                         </li>
                     </ul>
                     <p className="contact-text">

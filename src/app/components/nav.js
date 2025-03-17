@@ -32,7 +32,7 @@ const NavBar = () => {
                         <Link href={"/faq"}>FAQ</Link>
                     </li>
                     <li>
-                        <Link href={"https://www.paypal.com/ncp/payment/65RGFAAN2CPYY"} target="_blank">Get Started</Link>
+                        <Link href={"https://forms.gle/8VYWfGBSdcSfbned8"} target="_blank">Get Started</Link>
                     </li>
                 </ul>
 
