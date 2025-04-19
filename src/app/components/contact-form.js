@@ -78,7 +78,7 @@ const ContactForm = () => {
             <ToastContainer position="bottom-left" autoClose={3000} />
 
             <div className="contact-form-container">
-                <h2 className="form-title">Contact us</h2>
+                <h2 className="form-title">Enquires</h2>
                 <form onSubmit={handleSubmit} className="contact-form">
                     <div className="form-group-row">
                         <div className="form-group">
