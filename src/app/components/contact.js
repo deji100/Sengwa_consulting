@@ -2,8 +2,10 @@ import Image from "next/image";
 import ContactImg from "/public/contact.webp"
 import ContactForm from "./contact-form";
 import { m } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+import { FaWhatsapp } from "react-icons/fa";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdAttachEmail } from "react-icons/md";
+import { FaMagnifyingGlassLocation } from "react-icons/fa6";
 
 const Contact = () => {
     return (
@@ -19,21 +21,30 @@ const Contact = () => {
                     </p>
                     <ul className="contact-details">
                         <li>
-                            <span className="emoji">📞</span>Phone: <span className="contact-highlight" style={{ margin: "0 10px" }}>{"+1 224-534-9898"}</span>
+                            <span className="emoji">
+                                <FaPhoneAlt />
+                            </span>
+                            <span className="contact-highlight" style={{ margin: "0 10px" }}>{"+1 224-534-9898"}</span>
                         </li>
                         <li>
-                            <span className="emoji" style={{display: "flex", alignItems: "center"}}>
-                                <FontAwesomeIcon icon={faWhatsapp} style={{ color: "#25D366" }} />
-                            </span>Phone: <span className="contact-highlight" style={{ margin: "0 10px" }}>{"+234 814-227-4652"}</span>
+                            <span className="emoji">
+                                <FaWhatsapp />
+                            </span>
+                            <span className="contact-highlight" style={{ margin: "0 10px" }}>{"+234 814-227-4652"}</span>
                         </li>
                         <li>
-                            <span className="emoji">📧</span>
-                            {" Email: "}
+                            <span className="emoji">
+                                <MdAttachEmail />
+                            </span>
                             <span className="contact-highlight" style={{ margin: "0 10px" }}>
-                                {"  Hr@SengwaMina.com"}</span>
+                                {"  hr@sengwamina.com"}
+                            </span>
                         </li>
                         <li>
-                            <span className="emoji">📍</span>Address: <span className="contact-highlight" style={{ margin: "0 10px" }}>Chicago, IL</span>
+                            <span className="emoji">
+                                <FaMagnifyingGlassLocation />
+                            </span>
+                            <span className="contact-highlight" style={{ margin: "0 10px" }}>Chicago, IL</span>
                         </li>
                     </ul>
                     <p className="contact-text">

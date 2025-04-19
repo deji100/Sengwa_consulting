@@ -21,12 +21,12 @@ const Footer = () => {
           <div className="footer-column">
             <h3>Links</h3>
             <p><Link href={"/about-us"}>About Us</Link></p>
-            <p><Link href={"/contact-us"}>Contact Us</Link></p>
+            {/* <p><Link href={"/contact-us"}>Contact Us</Link></p> */}
             <p><Link href={"/faq"}>FAQ</Link></p>
           </div>
           <div className="footer-column">
             <h3>Contact</h3>
-            <p>Hr@SengwaMina.com</p>
+            <p>hr@sengwamina.com</p>
             <p>{"+1 224-534-9898"}</p>
             <p>{"+234 814-227-4652"}</p>
             <p>Chicago, IL</p>
