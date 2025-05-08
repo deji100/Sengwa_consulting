@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { RiMenuFold3Fill } from "react-icons/ri";
 import { useState } from "react";
+import Image from "next/image";
 
 const NavBar = () => {
     const [toggle, setToggle] = useState(false);
@@ -16,9 +17,7 @@ const NavBar = () => {
             <div className="nav-inner">
                 <span className="nav-logo">
                     <Link href={"/"} style={{ textDecoration: "none", color: "black" }}>
-                    Sengwa
-                    <br />
-                    Consulting
+                        <Image src={"/logo.webp"} className="w-[50px]" alt="Logo Image" width={150} height={50} />
                     </Link>
                 </span>
                 <ul className="nav-links">

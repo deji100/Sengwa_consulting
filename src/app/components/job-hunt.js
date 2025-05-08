@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { data } from "./data";
 import Hunt1 from "/public/hunt1.webp"
+import JobHuntSteps from "./steps";
 
 const JobPoint = ({ point }) => {
     return (
@@ -28,6 +29,9 @@ const JobHunt = () => {
                         <JobPoint key={point.title} point={point} />
                     ))}
                 </div>
+                <Image className="job-process-img" style={{width: "100%", height: "auto", marginTop: "50px", borderRadius: "15px"}} src={"/job-process.webp"} alt="Job Process" width={1000} height={0} />
+                
+                <JobHuntSteps />
             </div>
         </div>
     )
