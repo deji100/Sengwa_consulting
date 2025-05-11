@@ -24,11 +24,11 @@ const JobHunt = () => {
         <div className="job-hunt">
             <div className="inner">
                 <h2>Job Hunt Made Easy</h2>
-                <div className="job-points">
+                {/* <div className="job-points">
                     {data.map((point) => (
                         <JobPoint key={point.title} point={point} />
                     ))}
-                </div>
+                </div> */}
                 <Image className="job-process-img" style={{width: "100%", height: "auto", marginTop: "50px", borderRadius: "15px"}} src={"/job-process.webp"} alt="Job Process" width={1000} height={0} />
                 
                 <JobHuntSteps />
