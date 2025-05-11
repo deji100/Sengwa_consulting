@@ -1,0 +1,105 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafb;
+  padding: 2rem;
+}
+
+.floating-form {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.floating-form h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  color: #111827;
+}
+
+.floating-form label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.floating-form input,
+.floating-form select,
+.floating-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  transition: border-color 0.3s ease;
+}
+
+.floating-form input:focus,
+.floating-form select:focus,
+.floating-form textarea:focus {
+  border-color: #2563eb;
+  outline: none;
+  background-color: #fff;
+}
+
+.floating-form input[type="radio"] {
+  margin-right: 0.5rem;
+  transform: scale(1.1);
+}
+
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.radio-group label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+}
+
+.floating-form input[type="text"]:not(:only-child),
+.floating-form input[type="email"],
+.floating-form input[type="tel"],
+.floating-form input[type="url"],
+.floating-form input[type="number"],
+.floating-form input[type="date"] {
+  margin-bottom: 1rem;
+}
+
+.floating-form textarea {
+  resize: vertical;
+  min-height: 100px;
+  margin-bottom: 1rem;
+}
+
+.floating-form .row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.floating-form .row > * {
+  flex: 1 1 48%;
+}
+
+.floating-form button {
+  margin-top: 2rem;
+  background-color: #000;
+  color: #fff;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}

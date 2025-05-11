@@ -1,10 +1,10 @@
 "use client"
 
 import React, { useState } from "react";
-import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
 import emailjs from "emailjs-com";
+import Swal from 'sweetalert2';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -15,7 +15,6 @@ const ContactForm = () => {
         message: ""
     });
     const router = useRouter()
-    const [submit, setSubmit] = useState(true)
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,7 +22,6 @@ const ContactForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setSubmit(true)
 
         try {
             const response = await emailjs.send(
@@ -42,11 +40,19 @@ const ContactForm = () => {
                 `${process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY}`,
             );
 
-            console.log("Email sent successfully:", response);
 
             // Check if the response contains a successful status
             if (response.status === 200) {
-                toast.success("Form submitted successfully!");
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: 'Form submitted successfully!',
+                    confirmButtonColor: '#28a745',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        router.push('/');
+                    }
+                });
 
                 // Reset form values
                 setFormData({
@@ -57,25 +63,31 @@ const ContactForm = () => {
                     message: ""
                 });
 
-                setSubmit(false)
 
                 setTimeout(() => {
                     router.push("/");
                 }, 3000);
 
             } else {
-                setSubmit(false)
-                toast.error("Failed to submit form. Please try again.");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops!',
+                    text: 'Failed to submit form. Please try again.',
+                    confirmButtonColor: '#3085d6',
+                });
             }
         } catch (error) {
-            console.error("Error sending email:", error);
-            toast.error("An error occurred while sending the email. Please try again later.");
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops!',
+                text: 'An error occurred while sending the email. Please try again later.',
+                confirmButtonColor: '#3085d6',
+            });
         }
     };
 
     return (
         <div className="contact-form-width">
-            <ToastContainer position="bottom-left" autoClose={3000} />
 
             <div className="contact-form-container">
                 <h2 className="form-title">{"Let's talk!"}</h2>
