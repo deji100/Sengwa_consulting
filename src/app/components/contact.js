@@ -1,7 +1,6 @@
 import Image from "next/image";
 import ContactImg from "/public/contact.webp"
 import ContactForm from "./contact-form";
-import { m } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdAttachEmail } from "react-icons/md";
