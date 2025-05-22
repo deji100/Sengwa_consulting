@@ -24,16 +24,16 @@ const Contact = () => {
                                 <FaPhoneAlt />
                             </span>
                             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-                                <span className="contact-highlight" style={{ margin: "0 10px" }}>{"Chicago, IL"} {"+1 224-534-9898"}</span>
-                                <span className="contact-highlight" style={{ margin: "0 10px" }}>{"Lagos State, NG"} {"+2348142274652"}</span>
+                                <span className="contact-highlight" style={{ margin: "0 10px", display: "flex", flexDirection: "column", gap: "5px" }}>
+                                    <span>{"+1 224-534-9898"}</span>
+                                    <span>{"Chicago, IL"}</span>
+                                </span>
+                                <span className="contact-highlight" style={{ margin: "0 10px", display: "flex", flexDirection: "column", gap: "5px" }}>
+                                    <span>{"+2348142274652"}</span>
+                                    <span>{"Lagos State, NG"}</span>
+                                </span>
                             </div>
                         </li>
-                        {/* <li>
-                            <span className="emoji">
-                                <FaWhatsapp />
-                            </span>
-                            <span className="contact-highlight" style={{ margin: "0 10px" }}>{"+234 814-227-4652"}</span>
-                        </li> */}
                         <li>
                             <span className="emoji">
                                 <MdAttachEmail />
