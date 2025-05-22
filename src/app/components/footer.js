@@ -14,7 +14,9 @@ const Footer = () => {
             <FaFacebook className="icon" />
             <FaLinkedin className="icon" />
             <FaYoutube className="icon" />
-            <FaInstagram className="icon" />
+            <Link href={"https://www.instagram.com/sengwaconsulting?igsh=eGxzcDdhbTA5d2Rm"} target="_blank">
+              <FaInstagram className="icon" />
+            </Link>
           </div>
         </div>
         <div className="footer-links">
@@ -27,8 +29,8 @@ const Footer = () => {
           <div className="footer-column">
             <h3>Contact</h3>
             <p>hr@sengwamina.com</p>
-            <p>{"+1 224-534-9898"}</p>
-            <p>{"+234 814-227-4652"}</p>
+            <p>{"Chicago, IL"} {"+1 224-534-9898"}</p>
+            <p>{"Lagos State, NG"} {"+234 814-227-4652"}</p>
             <p>Chicago, IL</p>
           </div>
         </div>

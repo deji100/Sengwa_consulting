@@ -23,14 +23,17 @@ const Contact = () => {
                             <span className="emoji">
                                 <FaPhoneAlt />
                             </span>
-                            <span className="contact-highlight" style={{ margin: "0 10px" }}>{"+1 224-534-9898"}</span>
+                            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                                <span className="contact-highlight" style={{ margin: "0 10px" }}>{"Chicago, IL"} {"+1 224-534-9898"}</span>
+                                <span className="contact-highlight" style={{ margin: "0 10px" }}>{"Lagos State, NG"} {"+2348142274652"}</span>
+                            </div>
                         </li>
-                        <li>
+                        {/* <li>
                             <span className="emoji">
                                 <FaWhatsapp />
                             </span>
                             <span className="contact-highlight" style={{ margin: "0 10px" }}>{"+234 814-227-4652"}</span>
-                        </li>
+                        </li> */}
                         <li>
                             <span className="emoji">
                                 <MdAttachEmail />
