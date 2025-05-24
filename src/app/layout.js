@@ -1,6 +1,5 @@
 import "./globals.css";
 import NavBar from "./components/nav";
-import Newsletter from "./components/newsletter";
 import Footer from "./components/footer";
 import { GetStarted } from "./components/get-started";
 

@@ -3,6 +3,7 @@ import ContactImg from "/public/contact.webp"
 import ContactForm from "./contact-form";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
+import { IoPinSharp } from "react-icons/io5";
 import { MdAttachEmail } from "react-icons/md";
 import { FaMagnifyingGlassLocation } from "react-icons/fa6";
 
@@ -20,8 +21,9 @@ const Contact = () => {
                     </p>
                     <ul className="contact-details">
                         <li>
-                            <span className="emoji">
+                            <span className="emoji tel">
                                 <FaPhoneAlt />
+                                <IoPinSharp />
                             </span>
                             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
                                 <span className="contact-highlight" style={{ margin: "0 10px", display: "flex", flexDirection: "column", gap: "5px" }}>

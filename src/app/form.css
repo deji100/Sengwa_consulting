@@ -56,13 +56,14 @@ body {
 
 .radio-group {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 
 .radio-group label {
   font-weight: normal;
   display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 

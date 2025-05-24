@@ -320,12 +320,29 @@ nav .nav-inner ul.nav-links li:last-child a {
 }
 
 /* Color classes */
-.red { background-color: #e53935; }
-.pink { background-color: #d81b60; }
-.purple { background-color: #8e24aa; }
-.blue { background-color: #1e88e5; }
-.teal { background-color: #00897b; }
-.orange { background-color: #fb8c00; }
+.red {
+  background-color: #e53935;
+}
+
+.pink {
+  background-color: #d81b60;
+}
+
+.purple {
+  background-color: #8e24aa;
+}
+
+.blue {
+  background-color: #1e88e5;
+}
+
+.teal {
+  background-color: #00897b;
+}
+
+.orange {
+  background-color: #fb8c00;
+}
 
 
 
@@ -664,6 +681,12 @@ nav .nav-inner ul.nav-links li:last-child a {
   margin-right: 0.5rem;
 }
 
+.emoji.tel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .contact-highlight {
   font-weight: bold;
   color: #333;
@@ -841,7 +864,8 @@ textarea {
   color: gray;
 }
 
-.footer-column p:hover, .footer-column p a:hover {
+.footer-column p:hover,
+.footer-column p a:hover {
   color: black;
 }
 
@@ -896,6 +920,7 @@ textarea {
   cursor: pointer;
   color: #555;
 }
+
 .close-btn:hover {
   color: black;
 }
@@ -925,6 +950,7 @@ textarea {
   cursor: pointer;
   transition: 0.3s;
 }
+
 .get-started-btn:hover {
   background: #0056b3;
 }
@@ -935,6 +961,7 @@ textarea {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1153,19 +1180,19 @@ textarea {
   nav .nav-inner ul.nav-links {
     display: none;
   }
-  
+
   .about-us {
     margin-top: 120px;
   }
 
   .contact {
     margin: 120px 0;
-  }  
+  }
 
   .faq {
     margin: 100px 0;
   }
-  
+
 }
 
 @media (max-width: 620px) {
@@ -1244,6 +1271,12 @@ textarea {
 
   .job-hunt .inner .job-points .job-point .image {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 391px) {
+  .emoji.tel {
+    gap: 40px;
   }
 }
 

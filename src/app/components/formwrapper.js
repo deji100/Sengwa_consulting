@@ -227,8 +227,14 @@ const FloatingJobForm = () => {
                 <label><input type="radio" name="w2Or1099" value="W-2" onChange={handleChange} />
                     <span style={{ whiteSpace: 'nowrap' }}>W-2</span>
                 </label>
-                <label><input type="radio" name="w2Or1099" value="1099" onChange={handleChange} /> 1099</label>
-                <label><input type="radio" name="w2Or1099" value="Both" onChange={handleChange} /> Both</label>
+                <label>
+                    <input type="radio" name="w2Or1099" value="1099" onChange={handleChange} /> 
+                    <span>1099</span>
+                </label>
+                <label>
+                    <input type="radio" name="w2Or1099" value="Both" onChange={handleChange} /> 
+                    <span>Both</span>
+                </label>
             </div>
 
             <label>List your preferred job positions *</label>
@@ -243,8 +249,14 @@ const FloatingJobForm = () => {
             <label>If a company is offering less than your salary expectation, can we apply for them? e.g your salary expectation is $100k but the company is offering $65k-$85k, can we apply for that job with the maximum value they are willing to offer?
                 *</label>
             <div className="radio-group">
-                <label><input type="radio" name="acceptLowerOffer" value="Yes" onChange={handleChange} /> Yes</label>
-                <label><input type="radio" name="acceptLowerOffer" value="No" onChange={handleChange} /> No</label>
+                <label>
+                    <input type="radio" name="acceptLowerOffer" value="Yes" onChange={handleChange} /> 
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="radio" name="acceptLowerOffer" value="No" onChange={handleChange} /> 
+                    <span>No</span>
+                </label>
             </div>
 
             <label>Highest Education level achieved *</label>
@@ -274,20 +286,38 @@ const FloatingJobForm = () => {
 
             <label>Are you legally authorized to work in the USA? *</label>
             <div className="radio-group">
-                <label><input type="radio" name="authorizedInUSA" value="Yes" onChange={handleChange} /> Yes</label>
-                <label><input type="radio" name="authorizedInUSA" value="No" onChange={handleChange} /> No</label>
+                <label>
+                    <input type="radio" name="authorizedInUSA" value="Yes" onChange={handleChange} /> 
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="radio" name="authorizedInUSA" value="No" onChange={handleChange} /> 
+                    <span>No</span>
+                </label>
             </div>
 
             <label>Will you require sponsorship in the future? *</label>
             <div className="radio-group">
-                <label><input type="radio" name="requireSponsorship" value="Yes" onChange={handleChange} /> Yes</label>
-                <label><input type="radio" name="requireSponsorship" value="No" onChange={handleChange} /> No</label>
+                <label>
+                    <input type="radio" name="requireSponsorship" value="Yes" onChange={handleChange} /> 
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="radio" name="requireSponsorship" value="No" onChange={handleChange} /> 
+                    <span>No</span>
+                </label>
             </div>
 
             <label>Are you willing to travel? *</label>
             <div className="radio-group">
-                <label><input type="radio" name="willingToTravel" value="Yes" onChange={handleChange} /> Yes</label>
-                <label><input type="radio" name="willingToTravel" value="No" onChange={handleChange} /> No</label>
+                <label>
+                    <input type="radio" name="willingToTravel" value="Yes" onChange={handleChange} /> 
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="radio" name="willingToTravel" value="No" onChange={handleChange} /> 
+                    <span>No</span>
+                </label>
             </div>
 
             <label>What percentage of travel (e.g. 25%) *</label>
@@ -295,14 +325,26 @@ const FloatingJobForm = () => {
 
             <label>Are you willing to travel internationally? *</label>
             <div className="radio-group">
-                <label><input type="radio" name="travelInternationally" value="Yes" onChange={handleChange} /> Yes</label>
-                <label><input type="radio" name="travelInternationally" value="No" onChange={handleChange} /> No</label>
+                <label>
+                    <input type="radio" name="travelInternationally" value="Yes" onChange={handleChange} /> 
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="radio" name="travelInternationally" value="No" onChange={handleChange} /> 
+                    <span>No</span>
+                </label>
             </div>
 
             <label>Are you willing to work anywhere within the USA? *</label>
             <div className="radio-group">
-                <label><input type="radio" name="willingToWorkAnywhereUSA" value="Yes" onChange={handleChange} /> Yes</label>
-                <label><input type="radio" name="willingToWorkAnywhereUSA" value="No" onChange={handleChange} /> No</label>
+                <label>
+                    <input type="radio" name="willingToWorkAnywhereUSA" value="Yes" onChange={handleChange} /> 
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="radio" name="willingToWorkAnywhereUSA" value="No" onChange={handleChange} /> 
+                    <span>No</span>
+                </label>
             </div>
 
             <label>If {'"No"'} specify what state you want to work in. *</label>
@@ -316,8 +358,14 @@ const FloatingJobForm = () => {
 
             <label>Do you have a valid {"Driver's"} License? *</label>
             <div className="radio-group">
-                <label><input type="radio" name="hasDriversLicense" value="Yes" onChange={handleChange} /> Yes</label>
-                <label><input type="radio" name="hasDriversLicense" value="No" onChange={handleChange} /> No</label>
+                <label>
+                    <input type="radio" name="hasDriversLicense" value="Yes" onChange={handleChange} /> 
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="radio" name="hasDriversLicense" value="No" onChange={handleChange} /> 
+                    <span>No</span>
+                </label>
             </div>
 
             <label>Please tell us about your COVID-19 Vaccine status *</label>
@@ -330,14 +378,26 @@ const FloatingJobForm = () => {
 
             <label>Are you willing to work on weekends? (If required) *</label>
             <div className="radio-group">
-                <label><input type="radio" name="willingToWorkWeekends" value="Yes" onChange={handleChange} /> Yes</label>
-                <label><input type="radio" name="willingToWorkWeekends" value="No" onChange={handleChange} /> No</label>
+                <label>
+                    <input type="radio" name="willingToWorkWeekends" value="Yes" onChange={handleChange} /> 
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="radio" name="willingToWorkWeekends" value="No" onChange={handleChange} /> 
+                    <span>No</span>
+                </label>
             </div>
 
             <label>Have you ever been convicted of criminal offense(s)? *</label>
             <div className="radio-group">
-                <label><input type="radio" name="convictedOfCrime" value="Yes" onChange={handleChange} /> Yes</label>
-                <label><input type="radio" name="convictedOfCrime" value="No" onChange={handleChange} /> No</label>
+                <label>
+                    <input type="radio" name="convictedOfCrime" value="Yes" onChange={handleChange} /> 
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="radio" name="convictedOfCrime" value="No" onChange={handleChange} /> 
+                    <span>No</span>
+                </label>
             </div>
 
             <label>If Yes, please explain.</label>
@@ -353,8 +413,14 @@ const FloatingJobForm = () => {
 
             <label>Are you Hispanic/Latino? *</label>
             <div className="radio-group">
-                <label><input type="radio" name="hispanicOrLatino" value="Yes" onChange={handleChange} /> Yes</label>
-                <label><input type="radio" name="hispanicOrLatino" value="No" onChange={handleChange} /> No</label>
+                <label>
+                    <input type="radio" name="hispanicOrLatino" value="Yes" onChange={handleChange} /> 
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="radio" name="hispanicOrLatino" value="No" onChange={handleChange} /> 
+                    <span>No</span>
+                </label>
             </div>
 
             <label>Race *</label>
@@ -362,14 +428,26 @@ const FloatingJobForm = () => {
 
             <label>Are you a veteran? *</label>
             <div className="radio-group">
-                <label><input type="radio" name="veteranStatus" value="Yes" onChange={handleChange} /> Yes</label>
-                <label><input type="radio" name="veteranStatus" value="No" onChange={handleChange} /> No</label>
+                <label>
+                    <input type="radio" name="veteranStatus" value="Yes" onChange={handleChange} /> 
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="radio" name="veteranStatus" value="No" onChange={handleChange} /> 
+                    <span>No</span>
+                </label>
             </div>
 
             <label>Do you have a disability? *</label>
             <div className="radio-group">
-                <label><input type="radio" name="hasDisability" value="Yes" onChange={handleChange} /> Yes</label>
-                <label><input type="radio" name="hasDisability" value="No" onChange={handleChange} /> No</label>
+                <label>
+                    <input type="radio" name="hasDisability" value="Yes" onChange={handleChange} /> 
+                    <span>Yes</span>
+                </label>
+                <label>
+                    <input type="radio" name="hasDisability" value="No" onChange={handleChange} /> 
+                    <span>No</span>
+                </label>
             </div>
 
             <label>Your message to your Job Hunt Specialist at Sengwa Consulting *</label>
@@ -386,7 +464,6 @@ const FloatingJobForm = () => {
 
             <label>What is thirteen minus 6? *</label>
             <input type="text" name="mathVerification" value={formData.mathVerification} onChange={handleChange} />
-
 
             <button type="submit">Submit</button>
         </form>
