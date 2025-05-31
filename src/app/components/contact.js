@@ -20,36 +20,90 @@ const Contact = () => {
                         land your dream job — we’re just a message away.
                     </p>
                     <ul className="contact-details">
-                        <li>
-                            <span className="emoji tel">
-                                <FaPhoneAlt />
-                                <IoPinSharp />
-                            </span>
-                            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-                                <span className="contact-highlight" style={{ margin: "0 10px", display: "flex", flexDirection: "column", gap: "5px" }}>
-                                    <span>{"+1 224-534-9898"}</span>
-                                    <span>{"Chicago, IL"}</span>
-                                </span>
-                                <span className="contact-highlight" style={{ margin: "0 10px", display: "flex", flexDirection: "column", gap: "5px" }}>
-                                    <span>{"+2348142274652"}</span>
-                                    <span>{"Lagos State, NG"}</span>
-                                </span>
+                        <li style={{ listStyle: "none" }}>
+                            <div
+                                style={{
+                                    display: "flex",
+                                    flexWrap: "wrap",
+                                    gap: "25px",
+                                    alignItems: "flex-start",
+                                }}
+                            >
+                                {/* US Contact */}
+                                <div
+                                    className="contact-highlight"
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        gap: "20px",
+                                        minWidth: "200px",
+                                        flex: "1 1 200px",
+                                    }}
+                                >
+                                    <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                        <FaPhoneAlt />
+                                        <span>+1 224-534-9898</span>
+                                    </span>
+                                    <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                        <IoPinSharp />
+                                        <span>Chicago, IL</span>
+                                    </span>
+                                </div>
+
+                                {/* Nigeria Contact */}
+                                <div
+                                    className="contact-highlight"
+                                    style={{
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        gap: "20px",
+                                        minWidth: "200px",
+                                        flex: "1 1 200px",
+                                    }}
+                                >
+                                    <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                        <FaPhoneAlt />
+                                        <span>+2348142274652</span>
+                                    </span>
+                                    <span style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                        <IoPinSharp />
+                                        <span>Lagos State, NG</span>
+                                    </span>
+                                </div>
                             </div>
                         </li>
-                        <li>
-                            <span className="emoji">
+                        <li
+                            className="contact-highlight"
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "8px",
+                                margin: "10px 0",
+                            }}
+                        >
+                            <span style={{ display: "flex", alignItems: "center" }}>
                                 <MdAttachEmail />
                             </span>
-                            <span className="contact-highlight" style={{ margin: "0 10px" }}>
-                                {"  hr@sengwamina.com"}
+                            <span style={{ margin: "0 10px" }}>
+                                hr@sengwamina.com
                             </span>
                         </li>
-                        <li>
-                            <span className="emoji">
+
+                        <li
+                            className="contact-highlight"
+                            style={{
+                                display: "flex",
+                                alignItems: "center",
+                                gap: "8px",
+                                margin: "10px 0",
+                            }}
+                        >
+                            <span style={{ display: "flex", alignItems: "center" }}>
                                 <FaMagnifyingGlassLocation />
                             </span>
-                            <span className="contact-highlight" style={{ margin: "0 10px" }}>Chicago, IL</span>
+                            <span style={{ margin: "0 10px" }}>Chicago, IL</span>
                         </li>
+
                     </ul>
                     <p className="contact-text">
                         You can also reach us by filling out the form below. Let us know how we

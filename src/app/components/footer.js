@@ -31,7 +31,7 @@ const Footer = () => {
             <p>hr@sengwamina.com</p>
             <p>{"Chicago, IL"} {"+1 224-534-9898"}</p>
             <p>{"Lagos State, NG"} {"+234 814-227-4652"}</p>
-            <p>Chicago, IL</p>
+            {/* <p>Chicago, IL</p> */}
           </div>
         </div>
       </div>
