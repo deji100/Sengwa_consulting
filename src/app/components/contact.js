@@ -51,7 +51,7 @@ const Contact = () => {
                                 </div>
 
                                 {/* Nigeria Contact */}
-                                <div
+                                {/* <div
                                     className="contact-highlight"
                                     style={{
                                         display: "flex",
@@ -69,7 +69,7 @@ const Contact = () => {
                                         <IoPinSharp />
                                         <span>Lagos State, NG</span>
                                     </span>
-                                </div>
+                                </div> */}
                             </div>
                         </li>
                         <li
