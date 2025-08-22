@@ -17,7 +17,6 @@ export default function RootLayout({ children }) {
         <main>
           {children}
           <GetStarted />
-          {/* <Newsletter /> */}
         </main>
         <Footer />
       </body>

@@ -124,3 +124,57 @@ export const faqData = [
         answer: "No, we support job seekers across various industries and career levels — from entry-level positions to executive roles. Whether you're a recent graduate or a seasoned professional, we tailor our job hunting strategies to suit your unique career path."
     }
 ]
+
+
+// Six steps (colors roughly inspired by your image)
+export const steps = [
+  {
+    id: 1,
+    title: "Customer Onboarding",
+    desc: "Getting job application information from you",
+    color: "from-red-500 to-red-600",
+    icon: "settings", // just a label; we map to an icon in the component
+    // desktop offsets (px) from the center
+    dx: -360, dy: -170,
+  },
+  {
+    id: 2,
+    title: "System & Platform Set-Up",
+    desc: "Creating a JM Email and accounts in job boards",
+    color: "from-pink-500 to-pink-600",
+    icon: "bulb",
+    dx: 360, dy: -170,
+  },
+  {
+    id: 3,
+    title: "Job Apply",
+    desc: "We’ll apply for your desired jobs daily",
+    color: "from-fuchsia-500 to-fuchsia-600",
+    icon: "file",
+    dx: 440, dy: 40,
+  },
+  {
+    id: 4,
+    title: "Weekly Status Report",
+    desc: "A weekly report of companies we applied to",
+    color: "from-blue-600 to-blue-700",
+    icon: "search",
+    dx: 260, dy: 220,
+  },
+  {
+    id: 5,
+    title: "Interview",
+    desc: "You can relax and focus on your interviews",
+    color: "from-teal-600 to-teal-700",
+    icon: "trophy",
+    dx: -260, dy: 220,
+  },
+  {
+    id: 6,
+    title: "Dream Job",
+    desc: "We’ll help you land your dream job",
+    color: "from-amber-500 to-orange-500",
+    icon: "monitor",
+    dx: -440, dy: 40,
+  },
+];
