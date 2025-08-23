@@ -3,17 +3,8 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-  FiGlobe,        // global sourcing
-  FiUserCheck,    // vetting & onboarding
-  FiCreditCard,   // payroll
-  FiUsers,        // remote integration
-  FiMessageCircle,// cultural & comms
-  FiClock,        // time zones & workflow
-  FiActivity,     // QA & performance
-  FiShield,       // legal compliance
-  FiDollarSign,   // cost-effective scaling
-  FiBookOpen,     // multilingual support
-  FiCheck,        // bullets
+  FiGlobe, FiUserCheck, FiCreditCard, FiUsers, FiMessageCircle,
+  FiClock, FiActivity, FiShield, FiDollarSign, FiBookOpen, FiCheck
 } from "react-icons/fi";
 
 const BRAND = "#A9C52A";
@@ -23,8 +14,7 @@ const SUBSERVICES = [
   {
     icon: <FiGlobe />,
     title: "Global talent sourcing & recruitment",
-    why:
-      "Tap curated international pipelines across roles and regions—balanced for quality, cost, and time-to-fill.",
+    why: "Tap curated international pipelines across roles and regions—balanced for quality, cost, and time-to-fill.",
     points: [
       "Country/region feasibility mapping (talent depth, costs, risk)",
       "Sourcing playbooks + outreach in local channels",
@@ -34,8 +24,7 @@ const SUBSERVICES = [
   {
     icon: <FiUserCheck />,
     title: "International contractor vetting & onboarding",
-    why:
-      "Verify identity, credentials, and work history; onboard with compliant agreements and clear expectations.",
+    why: "Verify identity, credentials, and work history; onboard with compliant agreements and clear expectations.",
     points: [
       "KYC/identity checks, employment/education verification",
       "Standardized contractor packs (MSA/SOW, IP assignment, confidentiality)",
@@ -45,8 +34,7 @@ const SUBSERVICES = [
   {
     icon: <FiCreditCard />,
     title: "Cross-border payroll & compliance management",
-    why:
-      "Pay accurately, on time, and in local currencies—without tax or classification surprises.",
+    why: "Pay accurately, on time, and in local currencies—without tax or classification surprises.",
     points: [
       "Invoice → approval → payout workflows with FX handling",
       "Tax docs & retention policies aligned by jurisdiction",
@@ -56,8 +44,7 @@ const SUBSERVICES = [
   {
     icon: <FiUsers />,
     title: "Remote team integration & management",
-    why:
-      "Blend global hires into your rhythm—goals, rituals, and tooling that keep work moving.",
+    why: "Blend global hires into your rhythm—goals, rituals, and tooling that keep work moving.",
     points: [
       "Onboarding sprint (90-day plan, mentors, rituals)",
       "Tool access, permissions, and security posture",
@@ -67,8 +54,7 @@ const SUBSERVICES = [
   {
     icon: <FiMessageCircle />,
     title: "Cultural bridging & communication facilitation",
-    why:
-      "Reduce friction with shared norms for feedback, directness, and decision-making.",
+    why: "Reduce friction with shared norms for feedback, directness, and decision-making.",
     points: [
       "Cross-cultural primers & inclusive language guidelines",
       "Async-first templates (status, decisions, handoffs)",
@@ -78,8 +64,7 @@ const SUBSERVICES = [
   {
     icon: <FiClock />,
     title: "Time zone coordination & workflow optimization",
-    why:
-      "Follow-the-sun without chaos—design handoffs and overlaps that accelerate delivery.",
+    why: "Follow-the-sun without chaos—design handoffs and overlaps that accelerate delivery.",
     points: [
       "Overlap windows & handoff SLAs by team/function",
       "Work parceling & ticket hygiene for clarity",
@@ -89,8 +74,7 @@ const SUBSERVICES = [
   {
     icon: <FiActivity />,
     title: "Quality assurance & performance monitoring",
-    why:
-      "Make quality visible—evidence-based feedback and continuous improvement.",
+    why: "Make quality visible—evidence-based feedback and continuous improvement.",
     points: [
       "Definition of Done + acceptance criteria standards",
       "Scorecards, peer review, and demo cadence",
@@ -100,8 +84,7 @@ const SUBSERVICES = [
   {
     icon: <FiShield />,
     title: "Legal compliance for international employment",
-    why:
-      "Operate safely with region-aware agreements, data protection, and export controls.",
+    why: "Operate safely with region-aware agreements, data protection, and export controls.",
     points: [
       "Contractor vs. employee classification guidance*",
       "Data processing, IP assignment, confidentiality terms",
@@ -111,8 +94,7 @@ const SUBSERVICES = [
   {
     icon: <FiDollarSign />,
     title: "Cost-effective staffing across multiple markets",
-    why:
-      "Balance cost, capability, and risk with a multi-country strategy.",
+    why: "Balance cost, capability, and risk with a multi-country strategy.",
     points: [
       "Market benchmarks (rate bands, availability, seniority)",
       "Portfolio mix modeling & ramp plans",
@@ -122,8 +104,7 @@ const SUBSERVICES = [
   {
     icon: <FiBookOpen />,
     title: "Multilingual support & translation services",
-    why:
-      "Keep context crisp across languages and stakeholders.",
+    why: "Keep context crisp across languages and stakeholders.",
     points: [
       "Localized documentation & templates",
       "Human-in-the-loop translation for critical artifacts",
@@ -143,11 +124,11 @@ const DELIVERABLES = [
 ];
 
 const PROCESS = [
-  { step: "01", title: "Scope & map", text: "Define roles, timelines, and markets; assess feasibility and risks." },
-  { step: "02", title: "Recruit & vet", text: "Source globally; verify identity/credentials; align on SLAs and norms." },
+  { step: "01", title: "Scope & map", text: "Interviews to define roles, timelines, markets; feasibility & risk scan." },
+  { step: "02", title: "Recruit & vet", text: "Source globally; verify identity/credentials; align on SLAs & norms." },
   { step: "03", title: "Contract & onboard", text: "Execute agreements; provision tools; kick off 30/60/90 plan." },
   { step: "04", title: "Run & pay", text: "Operate cadence; track SLAs; approve invoices; pay in local currency." },
-  { step: "05", title: "Monitor & optimize", text: "Review quality, costs, and risks; rebalance markets as needed." },
+  { step: "05", title: "Monitor & optimize", text: "Review quality, costs, risk; rebalance markets as needed." },
 ];
 
 const OUTCOMES = [
@@ -161,10 +142,10 @@ const OUTCOMES = [
 /* ------------------ Page ------------------ */
 export default function InternationalContractOutsourcingPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-white pt-10 md:pt-24">
       {/* HERO */}
       <section className="relative isolate">
-        <div className="mx-auto max-w-7xl px-6 pt-16 pb-10 md:pt-24 md:pb-16">
+        <div className="mx-auto max-w-7xl px-6 pt-6 pb-10 md:pt-8 md:pb-16">
           <motion.header
             initial={{ opacity: 0, y: 8 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -188,7 +169,7 @@ export default function InternationalContractOutsourcingPage() {
                 className="inline-flex items-center rounded-xl px-5 py-3 font-semibold text-white shadow transition hover:shadow-lg"
                 style={{ background: "linear-gradient(135deg,#A9C52A,#6C792D)" }}
               >
-                Launch global contracting
+                Start your global build
               </Link>
               <a
                 href="#details"
@@ -202,24 +183,18 @@ export default function InternationalContractOutsourcingPage() {
         <div aria-hidden className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${BRAND}, #6C792D)` }} />
       </section>
 
-      {/* WHAT'S INCLUDED */}
-      <section id="details" className="bg-white">
+      {/* WHAT'S INCLUDED (mobile-safe in-view animations) */}
+      <section id="details" className="bg-white scroll-mt-24 relative z-0">
         <div className="mx-auto max-w-7xl px-6 py-14 md:py-20">
-          <motion.div
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ staggerChildren: 0.06 }}
-            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
-          >
-            {SUBSERVICES.map((s) => (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {SUBSERVICES.map((s, i) => (
               <motion.article
                 key={s.title}
-                variants={{
-                  hidden: { opacity: 0, y: 12 },
-                  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 90, damping: 16 } },
-                }}
-                className="group rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition hover:shadow-md"
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2, margin: "0px 0px -10% 0px" }}
+                transition={{ duration: 0.4, delay: i * 0.03 }}
+                className="group min-w-0 rounded-2xl border border-gray-100 bg-white p-5 shadow-sm transition hover:shadow-md"
                 style={{ backdropFilter: "saturate(1.05) blur(2px)" }}
               >
                 <div
@@ -229,26 +204,25 @@ export default function InternationalContractOutsourcingPage() {
                   <span className="text-lg">{s.icon}</span>
                 </div>
                 <h3 className="text-base font-semibold text-gray-900">{s.title}</h3>
-                <p className="mt-1 text-sm text-gray-600">{s.why}</p>
+                <p className="mt-1 text-sm text-gray-600 break-words">{s.why}</p>
                 <ul className="mt-2 space-y-1.5 text-sm text-gray-700">
                   {s.points.map((p) => (
                     <li key={p} className="flex items-start gap-2">
-                      <FiCheck className="mt-0.5 text-[#6C792D]" />
-                      <span>{p}</span>
+                      <FiCheck className="mt-0.5 shrink-0 text-[#6C792D]" />
+                      <span className="break-words">{p}</span>
                     </li>
                   ))}
                 </ul>
               </motion.article>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* DELIVERABLES + PROCESS */}
-      <section className="bg-white">
+      <section className="bg-white relative z-0">
         <div className="mx-auto max-w-7xl px-6 pb-16 md:pb-24">
           <div className="grid gap-10 md:grid-cols-2">
-            {/* Deliverables */}
             <motion.div
               initial={{ opacity: 0, x: -12 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -260,8 +234,8 @@ export default function InternationalContractOutsourcingPage() {
               <ul className="mt-4 space-y-2 text-sm text-gray-700">
                 {DELIVERABLES.map((d) => (
                   <li key={d} className="flex items-start gap-2">
-                    <FiCheck className="mt-0.5 text-[#6C792D]" />
-                    <span>{d}</span>
+                    <FiCheck className="mt-0.5 shrink-0 text-[#6C792D]" />
+                    <span className="break-words">{d}</span>
                   </li>
                 ))}
               </ul>
@@ -270,7 +244,6 @@ export default function InternationalContractOutsourcingPage() {
               </p>
             </motion.div>
 
-            {/* Process */}
             <motion.ol
               initial={{ opacity: 0, x: 12 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -308,7 +281,6 @@ export default function InternationalContractOutsourcingPage() {
             </motion.ol>
           </div>
 
-          {/* CTA */}
           <div className="mt-12 text-center">
             <Link
               href="/contact-us"
@@ -322,19 +294,19 @@ export default function InternationalContractOutsourcingPage() {
       </section>
 
       {/* OUTCOMES */}
-      <section className="bg-white pb-14">
+      <section className="bg-white pb-14 relative z-0">
         <div className="mx-auto max-w-7xl px-6">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.4 }}
-            className="grid gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:grid-cols-2"
+            className="grid grid-cols-1 gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:grid-cols-2"
           >
             {OUTCOMES.map((o) => (
               <div key={o} className="flex items-start gap-2">
-                <FiCheck className="mt-0.5 text-[#6C792D]" />
-                <span className="text-sm text-gray-800">{o}</span>
+                <FiCheck className="mt-0.5 shrink-0 text-[#6C792D]" />
+                <span className="text-sm text-gray-800 break-words">{o}</span>
               </div>
             ))}
           </motion.div>
@@ -345,7 +317,7 @@ export default function InternationalContractOutsourcingPage() {
         </div>
       </section>
 
-      {/* JSON-LD for SEO */}
+      {/* JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

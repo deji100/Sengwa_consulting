@@ -141,9 +141,9 @@ export default function Footer() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-4 text-xs text-gray-500 sm:flex-row">
           <p>© {new Date().getFullYear()} Sengwa Consulting. All rights reserved.</p>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="hover:text-gray-700">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-gray-700">Terms of Service</Link>
-            <Link href="/sitemap.xml" className="hover:text-gray-700">Sitemap</Link>
+            {/* <Link href="/privacy" className="hover:text-gray-700">Privacy Policy</Link> */}
+            {/* <Link href="/terms" className="hover:text-gray-700">Terms of Service</Link> */}
+            {/* <Link href="/sitemap.xml" className="hover:text-gray-700">Sitemap</Link> */}
           </div>
         </div>
       </div>

@@ -73,23 +73,24 @@ function useClickOutside(refs, handler) {
 export default function NavBar() {
     const [scrolled, setScrolled] = useState(false);
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const [ddOpen, setDdOpen] = useState(false);
 
-    const triggerRef = useRef(null);  // the "Services" button
-    const panelRef = useRef(null);    // the portal panel
+    // desktop mega dropdown
+    const [ddOpen, setDdOpen] = useState(false);
+    const triggerRef = useRef(null);
+    const panelRef = useRef(null);
     const [panelStyle, setPanelStyle] = useState({}); // {top,left,width,maxHeight}
 
-    // close on click outside (works across portal)
+    // mobile accordion (only one open at a time)
+    const [openMobileIdx, setOpenMobileIdx] = useState(null);
+
     useClickOutside([triggerRef, panelRef], () => setDdOpen(false));
 
-    // close on ESC
     useEffect(() => {
         const onEsc = (e) => e.key === "Escape" && setDdOpen(false);
         window.addEventListener("keydown", onEsc);
         return () => window.removeEventListener("keydown", onEsc);
     }, []);
 
-    // sticky/glassy header state
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 6);
         onScroll();
@@ -97,27 +98,23 @@ export default function NavBar() {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    // position the dropdown so it never overflows the viewport
     const positionPanel = () => {
         if (!triggerRef.current) return;
         const rect = triggerRef.current.getBoundingClientRect();
+        const MARGIN = 8;
+        const GAP = 12;
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
 
-        const MARGIN = 8; // viewport margin
-        const GAP = 12;   // gap from trigger
-        const viewportW = window.innerWidth;
-        const viewportH = window.innerHeight;
-
-        const width = Math.min(1100, viewportW - MARGIN * 2);
+        const width = Math.min(1100, vw - MARGIN * 2);
         let left = Math.round(rect.left + rect.width / 2 - width / 2);
-        left = Math.max(MARGIN, Math.min(left, viewportW - width - MARGIN));
+        left = Math.max(MARGIN, Math.min(left, vw - width - MARGIN));
 
         const top = Math.round(rect.bottom + GAP);
-        const maxHeight = Math.max(220, Math.min(viewportH - top - MARGIN, Math.floor(viewportH * 0.8)));
-
+        const maxHeight = Math.max(220, Math.min(vh - top - MARGIN, Math.floor(vh * 0.8)));
         setPanelStyle({ top, left, width, maxHeight });
     };
 
-    // (re)position when opening, resizing, or scrolling
     useEffect(() => {
         if (!ddOpen) return;
         positionPanel();
@@ -129,7 +126,6 @@ export default function NavBar() {
             window.removeEventListener("scroll", onScroll);
             window.removeEventListener("resize", onResize);
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [ddOpen]);
 
     return (
@@ -145,13 +141,9 @@ export default function NavBar() {
                     {/* Brand */}
                     <Link href="/" className="group flex items-center gap-3">
                         <Image src="/logo.webp" alt="Sengwa Consulting" width={120} height={120} className="rounded" priority />
-                        {/* <div className="hidden leading-5 md:block">
-                            <div className="font-semibold text-gray-900 tracking-wide">Sengwa Consulting</div>
-                            <div className="text-xs text-gray-500">Job Hunting Made Easy</div>
-                        </div> */}
                     </Link>
 
-                    {/* Desktop links (show Services first if you want) */}
+                    {/* Desktop links */}
                     <ul className="hidden items-center gap-1 md:flex">
                         <li className="relative">
                             <button
@@ -172,10 +164,11 @@ export default function NavBar() {
                         <li><Link className="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg" href="/contact-us">Let&apos;s Talk</Link></li>
                         <li><Link className="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg" href="/faq">FAQ</Link></li>
 
-                        <li>
+                        {/* extra breathing room for Get Started */}
+                        <li className="ml-3 md:ml-4 lg:ml-5">
                             <Link
                                 href="/job-application"
-                                className="rounded-xl px-4 py-2 font-semibold text-white transition"
+                                className="rounded-xl px-4 md:px-5 py-2 font-semibold text-white transition"
                                 style={{ background: `linear-gradient(135deg, ${BRAND}, #6C792D)`, boxShadow: "0 10px 24px rgba(169,197,42,.28)" }}
                             >
                                 Get Started
@@ -194,7 +187,7 @@ export default function NavBar() {
                 </nav>
             </header>
 
-            {/* === MEGA PANEL PORTAL (never clipped, never overflows viewport) === */}
+            {/* === Desktop MEGA PANEL (portal) === */}
             {ddOpen && (
                 <BodyPortal>
                     <div
@@ -202,11 +195,7 @@ export default function NavBar() {
                         onMouseEnter={() => setDdOpen(true)}
                         onMouseLeave={() => setDdOpen(false)}
                         className="fixed z-[120] overflow-hidden rounded-2xl border bg-white shadow-2xl ring-1 ring-black/5 transition-opacity data-[state=enter]:opacity-100 data-[state=leave]:opacity-0"
-                        style={{
-                            ...panelStyle, // {top,left,width,maxHeight}
-                            opacity: 1,
-                            borderColor: "rgba(0,0,0,0.06)",
-                        }}
+                        style={{ ...panelStyle, opacity: 1, borderColor: "rgba(0,0,0,0.06)" }}
                         data-state="enter"
                     >
                         <div className="h-1 w-full rounded-t-2xl" style={{ background: `linear-gradient(90deg, ${BRAND}, ${BRAND}80)` }} />
@@ -241,7 +230,11 @@ export default function NavBar() {
             {/* Mobile drawer */}
             <div className={`fixed inset-0 z-[99] transform transition ${drawerOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}>
                 <div className="absolute inset-0 bg-black/40" onClick={() => setDrawerOpen(false)} aria-hidden="true" />
-                <aside className={`absolute right-0 top-0 h-full w-[88%] max-w-sm transform bg-white shadow-2xl transition ${drawerOpen ? "translate-x-0" : "translate-x-full"}`} role="dialog" aria-modal="true">
+                <aside
+                    className={`absolute right-0 top-0 h-full w-[88%] max-w-sm transform bg-white shadow-2xl transition ${drawerOpen ? "translate-x-0" : "translate-x-full"}`}
+                    role="dialog"
+                    aria-modal="true"
+                >
                     <div className="flex items-center justify-between border-b px-4 py-3">
                         <Link href="/" onClick={() => setDrawerOpen(false)} className="flex items-center gap-2">
                             <Image src="/logo.webp" alt="Sengwa" width={34} height={34} className="rounded-sm" />
@@ -257,24 +250,38 @@ export default function NavBar() {
                         <li><Link className="block rounded-lg border px-3 py-2 text-gray-800 hover:bg-gray-50" href="/contact-us" onClick={() => setDrawerOpen(false)}>Let&apos;s Talk</Link></li>
                         <li><Link className="block rounded-lg border px-3 py-2 text-gray-800 hover:bg-gray-50" href="/faq" onClick={() => setDrawerOpen(false)}>FAQ</Link></li>
 
-                        {SERVICES.map((group) => (
-                            <li key={group.title} className="rounded-lg border">
-                                <details>
-                                    <summary className="cursor-pointer select-none list-none px-3 py-2 font-medium text-gray-900">
+                        {/* one-at-a-time accordion for Services groups */}
+                        {SERVICES.map((group, idx) => {
+                            const open = openMobileIdx === idx;
+                            return (
+                                <li key={group.title} className="rounded-lg border">
+                                    <button
+                                        type="button"
+                                        className="flex w-full items-center justify-between px-3 py-2 font-medium text-gray-900"
+                                        aria-expanded={open}
+                                        onClick={() => setOpenMobileIdx(open ? null : idx)}
+                                    >
                                         {group.title}
-                                    </summary>
-                                    <ul className="space-y-1 p-2">
-                                        {group.items.map((item) => (
-                                            <li key={item.href}>
-                                                <Link href={item.href} className="block rounded-md px-3 py-2 text-gray-700 hover:bg-gray-50" onClick={() => setDrawerOpen(false)}>
-                                                    {item.label}
-                                                </Link>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </details>
-                            </li>
-                        ))}
+                                        <FiChevronDown className={`transition ${open ? "rotate-180" : ""}`} />
+                                    </button>
+                                    <div className={`overflow-hidden transition-[grid-template-rows] ${open ? "grid grid-rows-[1fr]" : "grid grid-rows-[0fr]"}`}>
+                                        <ul className="min-h-0 space-y-1 p-2">
+                                            {group.items.map((item) => (
+                                                <li key={item.href}>
+                                                    <Link
+                                                        href={item.href}
+                                                        className="block rounded-md px-3 py-2 text-gray-700 hover:bg-gray-50"
+                                                        onClick={() => setDrawerOpen(false)}
+                                                    >
+                                                        {item.label}
+                                                    </Link>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </li>
+                            );
+                        })}
 
                         <li>
                             <Link
@@ -288,7 +295,9 @@ export default function NavBar() {
                         </li>
                     </ul>
 
-                    <div className="mt-auto border-t p-4 text-center text-xs text-gray-500">© {new Date().getFullYear()} Sengwa Consulting</div>
+                    <div className="mt-auto border-t p-4 text-center text-xs text-gray-500">
+                        © {new Date().getFullYear()} Sengwa Consulting
+                    </div>
                 </aside>
             </div>
 
