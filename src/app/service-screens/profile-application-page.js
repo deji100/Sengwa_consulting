@@ -289,7 +289,7 @@ export default function ProfileApplicationPage() {
           {/* CTA */}
           <div className="mt-12 text-center">
             <Link
-              href="/contact-us"
+              href="/talk2us"
               className="inline-flex items-center rounded-xl px-6 py-3 font-semibold text-white shadow transition hover:shadow-lg"
               style={{ background: "linear-gradient(135deg,#A9C52A,#6C792D)" }}
             >

@@ -135,7 +135,7 @@ export const steps = [
     color: "from-red-500 to-red-600",
     icon: "settings", // just a label; we map to an icon in the component
     // desktop offsets (px) from the center
-    dx: -360, dy: -170,
+    dx: -300, dy: -200,
   },
   {
     id: 2,
@@ -143,7 +143,7 @@ export const steps = [
     desc: "Creating a JM Email and accounts in job boards",
     color: "from-pink-500 to-pink-600",
     icon: "bulb",
-    dx: 360, dy: -170,
+    dx: 300, dy: -200,
   },
   {
     id: 3,
@@ -151,7 +151,7 @@ export const steps = [
     desc: "We’ll apply for your desired jobs daily",
     color: "from-fuchsia-500 to-fuchsia-600",
     icon: "file",
-    dx: 440, dy: 40,
+    dx: 360, dy: 0,
   },
   {
     id: 4,
@@ -159,7 +159,7 @@ export const steps = [
     desc: "A weekly report of companies we applied to",
     color: "from-blue-600 to-blue-700",
     icon: "search",
-    dx: 260, dy: 220,
+    dx: 300, dy: 200,
   },
   {
     id: 5,
@@ -167,7 +167,7 @@ export const steps = [
     desc: "You can relax and focus on your interviews",
     color: "from-teal-600 to-teal-700",
     icon: "trophy",
-    dx: -260, dy: 220,
+    dx: -300, dy: 200,
   },
   {
     id: 6,
@@ -175,6 +175,6 @@ export const steps = [
     desc: "We’ll help you land your dream job",
     color: "from-amber-500 to-orange-500",
     icon: "monitor",
-    dx: -440, dy: 40,
+    dx: -360, dy: 0,
   },
 ];

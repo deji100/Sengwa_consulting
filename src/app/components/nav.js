@@ -7,6 +7,7 @@ import { createPortal } from "react-dom";
 import { RiMenuFold3Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
 import { FiChevronDown } from "react-icons/fi";
+import { usePathname, useRouter } from "next/navigation";
 
 const BRAND = "#A9C52A";
 
@@ -70,9 +71,127 @@ function useClickOutside(refs, handler) {
     }, [refs, handler]);
 }
 
+/* -------- Start Options Modal -------- */
+function StartOptionsModal({ open, onClose }) {
+    const router = useRouter();
+    const firstLinkRef = useRef(null);
+    const [closing, setClosing] = useState(false);
+
+    // esc to close
+    useEffect(() => {
+        if (!open) return;
+        const onKey = (e) => e.key === "Escape" && onClose();
+        window.addEventListener("keydown", onKey);
+        return () => window.removeEventListener("keydown", onKey);
+    }, [open, onClose]);
+
+    // focus first link
+    useEffect(() => {
+        if (!open) return;
+        const t = setTimeout(() => firstLinkRef.current?.focus(), 0);
+        return () => clearTimeout(t);
+    }, [open]);
+
+    if (!open) return null;
+
+    const closeThenGo = (e, href) => {
+        e.preventDefault();
+        if (closing) return;
+        setClosing(true);
+        onClose(); // unmount/close modal
+        // Let state flush (two RAFs ~ next tick) before routing
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => router.push(href));
+        });
+    };
+
+    const Card = ({ href, title, desc, first }) => (
+        <Link
+            href={href}
+            prefetch={false}
+            onClick={(e) => closeThenGo(e, href)}
+            ref={first ? firstLinkRef : undefined}
+            className="group block rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 shadow-sm transition hover:border-slate-300 hover:shadow focus:outline-none focus:ring-2 focus:ring-[rgba(169,197,42,0.4)]"
+        >
+            <span className="flex items-start gap-3">
+                <span className="mt-1 inline-block h-2.5 w-2.5 flex-none rounded-full" style={{ background: BRAND }} />
+                <span className="leading-6">
+                    <span className="font-medium">{title}</span>
+                    <span className="block text-sm text-slate-500">{desc}</span>
+                </span>
+            </span>
+        </Link>
+    );
+
+    return (
+        <BodyPortal>
+            <div
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="start-modal-title"
+                className={`fixed inset-0 z-[1000] flex items-center justify-center transition-opacity ${closing ? "opacity-0 pointer-events-none" : "opacity-100"
+                    }`}
+                onClick={onClose}
+            >
+                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+                <div
+                    className={`relative z-[141] w-full max-w-lg rounded-2xl border border-white/15 bg-white/95 p-6 shadow-2xl transition-all ${closing ? "scale-95 opacity-0" : "scale-100 opacity-100"
+                        }`}
+                    onClick={(e) => e.stopPropagation()}
+                >
+                    <button
+                        onClick={onClose}
+                        aria-label="Close"
+                        className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100"
+                    >
+                        <IoClose size={18} />
+                    </button>
+
+                    <h2 id="start-modal-title" className="pr-10 text-lg font-semibold text-slate-900">
+                        What would you like to do?
+                    </h2>
+
+                    <ul className="mt-4 space-y-3">
+                        <li>
+                            <Card
+                                first
+                                href="/job-application"
+                                title="Are you Job hunting?"
+                                desc="Find roles and submit your application."
+                            />
+                        </li>
+                        <li>
+                            <Card
+                                href="/solution-for-organizations"
+                                title="Are you looking for Employees?"
+                                desc="Start a hiring request for your team."
+                            />
+                        </li>
+                        <li>
+                            <Card
+                                href="/solution-for-organizations"
+                                title="Are you interested in staff training?"
+                                desc="Explore workshops and leadership programs."
+                            />
+                        </li>
+                    </ul>
+
+                    <div
+                        aria-hidden
+                        className="mt-5 h-1 w-full rounded-full"
+                        style={{ background: `linear-gradient(90deg, ${BRAND}, #6C792D)` }}
+                    />
+                </div>
+            </div>
+        </BodyPortal>
+    );
+}
+
 export default function NavBar() {
+    const pathname = usePathname();
     const [scrolled, setScrolled] = useState(false);
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [startOpen, setStartOpen] = useState(false);
 
     // desktop mega dropdown
     const [ddOpen, setDdOpen] = useState(false);
@@ -97,6 +216,13 @@ export default function NavBar() {
         window.addEventListener("scroll", onScroll, { passive: true });
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
+
+    // Close all overlays whenever the route changes
+    useEffect(() => {
+        setStartOpen(false);
+        setDrawerOpen(false);
+        setDdOpen(false);
+    }, [pathname]);
 
     const positionPanel = () => {
         if (!triggerRef.current) return;
@@ -127,6 +253,16 @@ export default function NavBar() {
             window.removeEventListener("resize", onResize);
         };
     }, [ddOpen]);
+
+    const openStartModal = () => {
+        setDdOpen(false);
+        setStartOpen(true);
+    };
+
+    const openStartFromMobile = () => {
+        setDrawerOpen(false);
+        setTimeout(() => setStartOpen(true), 150); // avoid overlay stacking while drawer closes
+    };
 
     return (
         <>
@@ -164,15 +300,16 @@ export default function NavBar() {
                         <li><Link className="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg" href="/contact-us">Let&apos;s Talk</Link></li>
                         <li><Link className="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded-lg" href="/faq">FAQ</Link></li>
 
-                        {/* extra breathing room for Get Started */}
+                        {/* Get Started opens modal */}
                         <li className="ml-3 md:ml-4 lg:ml-5">
-                            <Link
-                                href="/job-application"
+                            {/* <button
+                                type="button"
+                                onClick={openStartModal}
                                 className="rounded-xl px-4 md:px-5 py-2 font-semibold text-white transition"
                                 style={{ background: `linear-gradient(135deg, ${BRAND}, #6C792D)`, boxShadow: "0 10px 24px rgba(169,197,42,.28)" }}
                             >
                                 Get Started
-                            </Link>
+                            </button> */}
                         </li>
                     </ul>
 
@@ -284,14 +421,14 @@ export default function NavBar() {
                         })}
 
                         <li>
-                            <Link
-                                href="/job-application"
-                                onClick={() => setDrawerOpen(false)}
-                                className="block rounded-xl px-4 py-3 text-center font-semibold text-white"
+                            {/* Mobile Get Started opens modal */}
+                            {/* <button
+                                onClick={openStartFromMobile}
+                                className="block w-full rounded-xl px-4 py-3 text-center font-semibold text-white"
                                 style={{ background: `linear-gradient(135deg, ${BRAND}, #6C792D)`, boxShadow: "0 10px 24px rgba(169,197,42,.28)" }}
                             >
                                 Get Started
-                            </Link>
+                            </button> */}
                         </li>
                     </ul>
 
@@ -303,6 +440,9 @@ export default function NavBar() {
 
             {/* Spacer so content isn't hidden by fixed nav */}
             <div className="h-14 md:h-20" />
+
+            {/* Start Options Modal */}
+            <StartOptionsModal open={startOpen} onClose={() => setStartOpen(false)} />
         </>
     );
 }

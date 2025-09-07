@@ -7,10 +7,10 @@ import { FaFacebook, FaLinkedin, FaYoutube, FaInstagram } from "react-icons/fa";
 const BRAND = "#A9C52A";
 
 const socials = [
-  { href: "https://www.facebook.com/", label: "Facebook", Icon: FaFacebook },
+  { href: "https://www.facebook.com/profile.php?id=61574228575029", label: "Facebook", Icon: FaFacebook },
   { href: "https://www.linkedin.com/company/sengwaconsulting", label: "LinkedIn", Icon: FaLinkedin },
-  { href: "https://www.youtube.com/", label: "YouTube", Icon: FaYoutube },
-  { href: "https://www.instagram.com/sengwaconsulting?igsh=eGxzcDdhbTA5d2Rm", label: "Instagram", Icon: FaInstagram },
+  { href: "https://youtube.com/@sengwaconsulting?si=VKeIeXm2Skr9DjlR", label: "YouTube", Icon: FaYoutube },
+  { href: "https://www.instagram.com/sengwaconsulting/", label: "Instagram", Icon: FaInstagram },
 ];
 
 export default function Footer() {
@@ -57,7 +57,7 @@ export default function Footer() {
           </div>
 
           {/* Link columns */}
-          <nav className="grid gap-8 sm:grid-cols-2 md:col-span-7 lg:col-span-8" aria-label="Footer">
+          <nav className="grid gap-8 sm:grid-cols-3 md:col-span-7 lg:col-span-8" aria-label="Footer">
             <div>
               <h3 className="text-sm font-semibold text-gray-900">Company</h3>
               <ul className="mt-3 space-y-2 text-sm text-gray-600">
@@ -76,21 +76,6 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-sm font-semibold text-gray-900">Services</h3>
-              <ul className="mt-3 space-y-2 text-sm text-gray-600">
-                <li><Link href="/services/job-hunt/profile-and-application-services" className="hover:text-gray-900">Job Hunt</Link></li>
-                <li><Link href="/services/recruiting/talent-sourcing-and-acquisition" className="hover:text-gray-900">Recruiting</Link></li>
-                <li><Link href="/services/staff-or-training-services/leadership-development" className="hover:text-gray-900">Staff/Training Services</Link></li>
-                <li><Link href="/services/global-workforce-solutions/international-contract-outsourcing" className="hover:text-gray-900">Global Workforce Solutions</Link></li>
-                {/* <li>
-                  <Link href="/services" className="text-[13px] text-gray-500 underline-offset-4 hover:underline">
-                    View all services →
-                  </Link>
-                </li> */}
-              </ul>
-            </div>
-
-            <div>
               <h3 className="text-sm font-semibold text-gray-900">Contact</h3>
               <ul className="mt-3 space-y-2 text-sm text-gray-600">
                 <li>
@@ -104,6 +89,21 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>Chicago, IL</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="text-sm font-semibold text-gray-900">Services</h3>
+              <ul className="mt-3 space-y-2 text-sm text-gray-600">
+                <li><Link href="/services/job-hunt/profile-and-application-services" className="hover:text-gray-900">Job Hunt</Link></li>
+                <li><Link href="/services/recruiting/talent-sourcing-and-acquisition" className="hover:text-gray-900">Recruiting</Link></li>
+                <li><Link href="/services/staff-or-training-services/leadership-development" className="hover:text-gray-900">Staff/Training Services</Link></li>
+                <li><Link href="/services/global-workforce-solutions/international-contract-outsourcing" className="hover:text-gray-900">Global Workforce Solutions</Link></li>
+                {/* <li>
+                  <Link href="/services" className="text-[13px] text-gray-500 underline-offset-4 hover:underline">
+                    View all services →
+                  </Link>
+                </li> */}
               </ul>
             </div>
 

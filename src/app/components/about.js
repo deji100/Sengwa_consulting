@@ -1,169 +1,144 @@
-// "use client";
-
-// import Image from "next/image";
-// import { motion } from "framer-motion";
-// import Link from "next/link";
-
-// const BRAND = "#A9C52A";
-
-// export default function AboutUs() {
-//     return (
-//         <section className="bg-white">
-//             <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-//                 <header className="mx-auto max-w-3xl text-center">
-//                     <motion.h1
-//                         initial={{ opacity: 0, y: 8 }}
-//                         whileInView={{ opacity: 1, y: 0 }}
-//                         viewport={{ once: true, amount: 0.4 }}
-//                         transition={{ duration: 0.4 }}
-//                         className="text-4xl font-extrabold tracking-tight text-gray-900 md:text-5xl"
-//                     >
-//                         About <span className="bg-gradient-to-r from-[#A9C52A] to-[#6C792D] bg-clip-text text-transparent">Sengwa Consulting</span>
-//                     </motion.h1>
-//                     <motion.p
-//                         initial={{ opacity: 0, y: 6 }}
-//                         whileInView={{ opacity: 1, y: 0 }}
-//                         viewport={{ once: true, amount: 0.5 }}
-//                         transition={{ duration: 0.4, delay: 0.1 }}
-//                         className="mx-auto mt-4 max-w-2xl text-lg text-gray-600"
-//                     >
-//                         We turn job hunting into a guided, stress-free journey—strategy, daily execution, and transparent reporting.
-//                     </motion.p>
-//                 </header>
-
-//                 {/* Section A */}
-//                 <div className="mt-12 grid items-center gap-10 md:mt-16 md:grid-cols-2">
-//                     <motion.div
-//                         initial={{ opacity: 0, x: -12 }}
-//                         whileInView={{ opacity: 1, x: 0 }}
-//                         viewport={{ once: true, amount: 0.4 }}
-//                         transition={{ duration: 0.45 }}
-//                     >
-//                         <h2 className="text-2xl font-semibold text-gray-900">Your Job Hunt, Supercharged</h2>
-//                         <p className="mt-3 text-gray-600">
-//                             We learn your goals, tune your materials, and take action every day—so you can focus on interviews.
-//                         </p>
-//                         <ul className="mt-4 grid gap-2 text-sm text-gray-700">
-//                             <li>• Tailored plan & professional profiles</li>
-//                             <li>• Daily applications & targeted outreach</li>
-//                             <li>• Weekly Status Reports with full transparency</li>
-//                         </ul>
-
-//                         <Link
-//                             href="/job-application"
-//                             className="mt-6 inline-flex rounded-xl px-5 py-3 text-sm font-semibold text-white shadow"
-//                             style={{ background: "linear-gradient(135deg,#A9C52A,#6C792D)" }}
-//                         >
-//                             Get Started
-//                         </Link>
-//                     </motion.div>
-
-//                     <motion.div
-//                         initial={{ opacity: 0, x: 12 }}
-//                         whileInView={{ opacity: 1, x: 0 }}
-//                         viewport={{ once: true, amount: 0.4 }}
-//                         transition={{ duration: 0.45, delay: 0.05 }}
-//                         className="relative"
-//                     >
-//                         <Image
-//                             src="/about-modern-hero.webp"
-//                             alt="Modern glass UI panels showing Sengwa's job hunt workflow"
-//                             width={1920}
-//                             height={1200}
-//                             className="rounded-2xl shadow-2xl ring-1 ring-black/5"
-//                             priority
-//                         />
-//                         <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-[#A9C52A]/15" />
-//                     </motion.div>
-//                 </div>
-
-//                 {/* Section B */}
-//                 <div className="mt-16 grid items-center gap-10 md:grid-cols-2">
-//                     <motion.div
-//                         initial={{ opacity: 0, x: -12 }}
-//                         whileInView={{ opacity: 1, x: 0 }}
-//                         viewport={{ once: true, amount: 0.4 }}
-//                         transition={{ duration: 0.45 }}
-//                         className="relative order-2 md:order-1"
-//                     >
-//                         <Image
-//                             src="/sengwa-process-global.webp"
-//                             alt="Global Workforce Solutions — Scale across borders with compliant, high-quality talent"
-//                             width={1920}
-//                             height={1080}
-//                             className="rounded-2xl shadow-2xl ring-1 ring-black/5"
-//                         />
-
-//                         <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-[#A9C52A]/15" />
-//                     </motion.div>
-
-//                     <motion.div
-//                         initial={{ opacity: 0, x: 12 }}
-//                         whileInView={{ opacity: 1, x: 0 }}
-//                         viewport={{ once: true, amount: 0.4 }}
-//                         transition={{ duration: 0.45, delay: 0.05 }}
-//                         className="order-1 md:order-2"
-//                     >
-//                         <h2 className="text-2xl font-semibold text-gray-900">A Smooth Journey</h2>
-//                         <p className="mt-3 text-gray-600">
-//                             From onboarding and setup to daily applying, reporting, interviews, and negotiation—we guide every step.
-//                         </p>
-//                         <ul className="mt-4 grid gap-2 text-sm text-gray-700">
-//                             <li>• Clear steps and progress</li>
-//                             <li>• Support through interviews & offers</li>
-//                             <li>• Focus on landing the right role</li>
-//                         </ul>
-//                     </motion.div>
-//                 </div>
-
-//                 {/* Values row */}
-//                 <motion.div
-//                     initial={{ opacity: 0, y: 10 }}
-//                     whileInView={{ opacity: 1, y: 0 }}
-//                     viewport={{ once: true, amount: 0.4 }}
-//                     transition={{ duration: 0.4 }}
-//                     className="mt-16 grid gap-4 rounded-2xl border border-gray-100 bg-white p-6 shadow-sm sm:grid-cols-3"
-//                 >
-//                     <div className="rounded-xl border border-gray-100 p-4">
-//                         <h3 className="text-sm font-semibold text-gray-900">Personalized Strategy</h3>
-//                         <p className="mt-1 text-sm text-gray-600">Plans tailored to your goals and industry.</p>
-//                     </div>
-//                     <div className="rounded-xl border border-gray-100 p-4">
-//                         <h3 className="text-sm font-semibold text-gray-900">Daily Execution</h3>
-//                         <p className="mt-1 text-sm text-gray-600">Consistent applications to keep momentum high.</p>
-//                     </div>
-//                     <div className="rounded-xl border border-gray-100 p-4">
-//                         <h3 className="text-sm font-semibold text-gray-900">Transparent Reporting</h3>
-//                         <p className="mt-1 text-sm text-gray-600">Weekly Status Reports so you’re always informed.</p>
-//                     </div>
-//                 </motion.div>
-//             </div>
-//         </section>
-//     );
-// }
-
-
-
-
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useMotionValue, useTransform, animate } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
+import { useRouter } from "next/navigation";
 
 const BRAND = "#A9C52A";
 
-// Curated images (free to use). Swap if you prefer.
+/* ------------------ Get Started Modal ------------------ */
+function BodyPortal({ children }) {
+    const [mounted, setMounted] = useState(false);
+    useEffect(() => setMounted(true), []);
+    if (!mounted) return null;
+    return createPortal(children, document.body);
+}
+
+function StartOptionsModal({ open, onClose }) {
+    const router = useRouter();
+    const firstRef = useRef(null);
+    const [closing, setClosing] = useState(false);
+
+    // esc to close
+    useEffect(() => {
+        if (!open) return;
+        const onKey = (e) => e.key === "Escape" && onClose();
+        window.addEventListener("keydown", onKey);
+        return () => window.removeEventListener("keydown", onKey);
+    }, [open, onClose]);
+
+    // focus first card
+    useEffect(() => {
+        if (!open) return;
+        const t = setTimeout(() => firstRef.current?.focus(), 0);
+        return () => clearTimeout(t);
+    }, [open]);
+
+    if (!open) return null;
+
+    const closeThenGo = (e, href) => {
+        e.preventDefault();
+        if (closing) return;
+        setClosing(true);
+        onClose();
+        // let state flush before routing
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => router.push(href));
+        });
+    };
+
+    const Card = ({ href, title, desc, first }) => (
+        <Link
+            href={href}
+            prefetch={false}
+            onClick={(e) => closeThenGo(e, href)}
+            ref={first ? firstRef : undefined}
+            className="group block rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-800 shadow-sm transition hover:border-slate-300 hover:shadow focus:outline-none focus:ring-2 focus:ring-[rgba(169,197,42,0.35)]"
+        >
+            <span className="flex items-start gap-3">
+                <span
+                    className="mt-1 inline-block h-2.5 w-2.5 flex-none rounded-full"
+                    style={{ background: BRAND }}
+                />
+                <span className="leading-6">
+                    <span className="font-medium">{title}</span>
+                    <span className="block text-sm text-slate-500">{desc}</span>
+                </span>
+            </span>
+        </Link>
+    );
+
+    return (
+        <BodyPortal>
+            <div
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="start-modal-title"
+                className={`fixed inset-0 z-[140] flex items-center justify-center transition-opacity ${closing ? "opacity-0 pointer-events-none" : "opacity-100"
+                    }`}
+                onClick={onClose}
+            >
+                <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
+                <div
+                    className={`relative z-[141] w-full max-w-lg rounded-2xl border border-white/15 bg-white/95 p-6 shadow-2xl transition-all ${closing ? "scale-95 opacity-0" : "scale-100 opacity-100"
+                        }`}
+                    onClick={(e) => e.stopPropagation()}
+                >
+                    <button
+                        onClick={onClose}
+                        aria-label="Close"
+                        className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100"
+                    >
+                        ×
+                    </button>
+
+                    <h2 id="start-modal-title" className="pr-10 text-lg font-semibold text-slate-900">
+                        What would you like to do?
+                    </h2>
+
+                    <div className="mt-4 space-y-3">
+                        <Card
+                            first
+                            href="/job-application"
+                            title="Are you Job hunting?"
+                            desc="Find roles and submit your application."
+                        />
+                        <Card
+                            href="/solution-for-organizations"
+                            title="Are you looking for Employees?"
+                            desc="Start a hiring request for your team."
+                        />
+                        <Card
+                            href="/solution-for-organizations"
+                            title="Are you interested in staff training?"
+                            desc="Explore workshops and leadership programs."
+                        />
+                    </div>
+
+                    <div
+                        aria-hidden
+                        className="mt-5 h-1 w-full rounded-full"
+                        style={{ background: `linear-gradient(90deg, ${BRAND}, #6C792D)` }}
+                    />
+                </div>
+            </div>
+        </BodyPortal>
+    );
+}
+
+/* ------------------ Curated images ------------------ */
 const IMG = {
     hero: "https://images.pexels.com/photos/31690584/pexels-photo-31690584.jpeg?auto=compress&cs=tinysrgb&w=2400&q=80",
-    team:
-        "https://images.pexels.com/photos/3184312/pexels-photo-3184312.jpeg?auto=compress&cs=tinysrgb&w=1600&q=80",
-    plants:
-        "https://images.pexels.com/photos/7888656/pexels-photo-7888656.jpeg?auto=compress&cs=tinysrgb&w=1600&q=80",
+    team: "https://images.pexels.com/photos/3184312/pexels-photo-3184312.jpeg?auto=compress&cs=tinysrgb&w=1600&q=80",
+    plants: "https://images.pexels.com/photos/7888656/pexels-photo-7888656.jpeg?auto=compress&cs=tinysrgb&w=1600&q=80",
 };
 
 export default function AboutUs() {
+    const [startOpen, setStartOpen] = useState(false);
+
     return (
         <main className="bg-white">
             {/* HERO */}
@@ -189,8 +164,10 @@ export default function AboutUs() {
                             </p>
 
                             <div className="mt-6 flex flex-wrap gap-3">
-                                <Link
-                                    href="/job-application"
+                                {/* Get Started opens modal */}
+                                <button
+                                    type="button"
+                                    onClick={() => setStartOpen(true)}
                                     className="inline-flex items-center rounded-xl px-5 py-3 font-semibold text-white shadow"
                                     style={{
                                         background: "linear-gradient(135deg,#A9C52A,#6C792D)",
@@ -198,9 +175,10 @@ export default function AboutUs() {
                                     }}
                                 >
                                     Get Started
-                                </Link>
+                                </button>
+
                                 <Link
-                                    href="/services/recruiting/talent-sourcing"
+                                    href="/services"
                                     className="inline-flex items-center rounded-xl border border-gray-200 bg-white px-5 py-3 font-semibold text-gray-800 shadow-sm hover:shadow"
                                 >
                                     Explore Services
@@ -217,7 +195,7 @@ export default function AboutUs() {
                             className="relative h-[28rem]"
                         >
                             {/* main image */}
-                            <div className="absolute z-0 inset-0 translate-x-2">
+                            <div className="absolute inset-0 z-0 translate-x-2">
                                 <Image
                                     src={IMG.hero}
                                     alt="Modern office with glass walls and natural light"
@@ -238,7 +216,7 @@ export default function AboutUs() {
                                     alt="Bright office with plants"
                                     width={1280}
                                     height={960}
-                                    className="w-full h-full object-cover"
+                                    className="h-full w-full object-cover"
                                 />
                             </motion.div>
                             {/* front card */}
@@ -248,12 +226,7 @@ export default function AboutUs() {
                                 viewport={{ once: true }}
                                 className="absolute bottom-4 right-6 hidden h-48 w-64 overflow-hidden rounded-2xl border border-gray-100 shadow-xl sm:block"
                             >
-                                <Image
-                                    src={IMG.team}
-                                    alt="Collaborative team meeting"
-                                    fill
-                                    className="object-cover"
-                                />
+                                <Image src={IMG.team} alt="Collaborative team meeting" fill className="object-cover" />
                             </motion.div>
                         </motion.div>
                     </div>
@@ -280,7 +253,7 @@ export default function AboutUs() {
                 </div>
             </section>
 
-            {/* HOW WE HELP (copy expanded) */}
+            {/* HOW WE HELP */}
             <section className="bg-white">
                 <div className="mx-auto max-w-7xl px-6 py-10 md:py-12">
                     <div className="grid items-center gap-10 md:grid-cols-2">
@@ -376,7 +349,7 @@ export default function AboutUs() {
                     {/* CTA */}
                     <div className="mt-12 text-center">
                         <Link
-                            href="/contact-us"
+                            href="/talk2us"
                             className="inline-flex items-center rounded-xl px-6 py-3 font-semibold text-white shadow"
                             style={{
                                 background: "linear-gradient(135deg,#A9C52A,#6C792D)",
@@ -388,6 +361,9 @@ export default function AboutUs() {
                     </div>
                 </div>
             </section>
+
+            {/* Modal lives at page root so it can overlay everything */}
+            <StartOptionsModal open={startOpen} onClose={() => setStartOpen(false)} />
         </main>
     );
 }
