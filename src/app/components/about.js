@@ -263,17 +263,32 @@ export default function AboutUs() {
                             viewport={{ once: true, amount: 0.4 }}
                             transition={{ duration: 0.45 }}
                         >
-                            <h2 className="text-2xl font-semibold text-gray-900">Your Job Hunt, Supercharged</h2>
+                            <h2 className="text-2xl font-semibold text-gray-900">Start Your Job Search Support</h2>
                             <p className="mt-3 text-gray-600">
-                                From day one, we align on target roles, craft or tune your resume, LinkedIn,
-                                and portfolio, then take daily action on your behalf—so you can spend your time
-                                preparing for interviews and leveling up your skills.
+                                Sengwa Consulting provides professional job search support through a subscription plan.
                             </p>
-                            <ul className="mt-4 grid gap-2 text-sm text-gray-700">
-                                <li>• Professional resume, LinkedIn & application materials</li>
-                                <li>• Daily applications & curated outreach</li>
-                                <li>• Interview prep and offer guidance when you land calls</li>
+                            <p className="mt-4 text-sm font-medium text-gray-800">Our services include:</p>
+                            <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-gray-700">
+                                <li>Resume optimization</li>
+                                <li>LinkedIn profile enhancement</li>
+                                <li>Job search strategy</li>
+                                <li>Application support</li>
+                                <li>Interview preparation</li>
+                                <li>Employer referrals</li>
                             </ul>
+                            <h3 className="mt-5 text-base font-semibold text-gray-900">Placement Success Fee</h3>
+                            <p className="mt-2 text-sm text-gray-600">
+                                If a client secures employment during the service period or within 90 days after the
+                                conclusion of services, a success-based placement fee of 15-20% of the client&apos;s first
+                                full month&apos;s gross salary applies.
+                            </p>
+                            <p className="mt-2 text-sm text-gray-600">
+                                Payment of the placement fee is due 30 days after completion of the first full month of
+                                employment.
+                            </p>
+                            <p className="mt-2 text-sm text-gray-600">
+                                By submitting payment, you acknowledge and agree to Sengwa Consulting&apos;s service terms.
+                            </p>
                         </motion.div>
 
                         <motion.div
